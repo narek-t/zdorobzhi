@@ -1,0 +1,63 @@
+@import "_variables.scss";
+@import "_sprite.scss";
+
+html {
+	font-size: 16px;
+	height: 100%;
+}
+
+body {
+	background: $bgColor;
+	font-family: $fontFamily;
+	color: $mainColor;
+	min-height: 100%;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+}
+
+.all-wrapper {
+	flex: 1;
+}
+
+h1 {
+	text-align: center;
+	margin: 50px auto 30px;
+	font-size: 2.5rem;
+}
+
+a {
+	color: $linkColor;
+}
+
+.sprite-example {
+	text-align: center;
+	i {
+		display: inline-block;
+		margin: 0 10px;
+	}
+	.facebook-logo__icon {
+		@include sprite($facebook-logo-icon);
+	}
+	.google-plus-logo__icon {
+		@include sprite($google-plus-logo-icon);
+	}
+	.instagram-logo__icon {
+		@include sprite($instagram-logo-icon);
+	}
+	.twitter-logo__icon {
+		@include sprite($twitter-logo-icon);
+	}
+	.youtube-logo__icon {
+		@include sprite($youtube-logo-icon);
+	}
+}
+
+.author-git {
+	text-align: center;
+}
+
+.site-footer {
+	text-align: center;
+	padding: 20px 0;
+}

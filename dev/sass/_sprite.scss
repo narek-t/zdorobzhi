@@ -1,0 +1,42 @@
+$facebook-logo-icon: 0px 0px 0px 0px 32px 32px 104px 68px '../img/sprite.png';
+$google-plus-logo-icon: 36px 0px -36px 0px 32px 32px 104px 68px '../img/sprite.png';
+$instagram-logo-icon: 0px 36px 0px -36px 32px 32px 104px 68px '../img/sprite.png';
+$twitter-logo-icon: 36px 36px -36px -36px 32px 32px 104px 68px '../img/sprite.png';
+$youtube-logo-icon: 72px 0px -72px 0px 32px 32px 104px 68px '../img/sprite.png';
+
+/*
+The provided mixins are intended to be used with the array-like variables
+
+.icon-home {
+  @include sprite-width($icon-home);
+}
+
+.icon-email {
+  @include sprite($icon-email);
+}
+*/
+@mixin sprite-width($sprite) {
+  width: nth($sprite, 5);
+}
+
+@mixin sprite-height($sprite) {
+  height: nth($sprite, 6);
+}
+
+@mixin sprite-position($sprite) {
+  $sprite-offset-x: nth($sprite, 3);
+  $sprite-offset-y: nth($sprite, 4);
+  background-position: $sprite-offset-x  $sprite-offset-y;
+}
+
+@mixin sprite-image($sprite) {
+  $sprite-image: nth($sprite, 9);
+  background-image: url(#{$sprite-image});
+}
+
+@mixin sprite($sprite) {
+  @include sprite-image($sprite);
+  @include sprite-position($sprite);
+  @include sprite-width($sprite);
+  @include sprite-height($sprite);
+}

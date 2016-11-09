@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+html(lang="en")
+	head
+		meta(charset="UTF-8")
+		meta(http-equiv="X-UA-Compatible", content="IE=edge")
+		meta(name="viewport", content="width=device-width, initial-scale=1")
+		link(rel="stylesheet", href="css/style.min.css")
+		title Document
+	
+	body
+		.all-wrapper
+			include _header
+
+			block content
+
+		include _footer
+
+		block externalScripts
+		script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js")
+
+		block scripts
+		script(src="js/lib/lib.min.js")
+		script(src="js/main.min.js")
+
+		block inlineScripts
