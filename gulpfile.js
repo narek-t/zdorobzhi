@@ -168,7 +168,7 @@ gulp.task('libScripts', function() {
 // --------------------------------------------
 
 gulp.task('fonts', function() {
-	return gulp.src('dev/fonts/**/*.{ttf,woff,eot,svg,otf}')
+	return gulp.src('dev/fonts/**/*.{ttf,woff,eot,svg,otf,woff2}')
 		.pipe(gulp.dest('public/fonts'))
 		.pipe(browserSync.reload({
 			stream: true
