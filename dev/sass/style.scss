@@ -2,23 +2,103 @@
 @import "_variables.scss";
 @import "_sprite.scss";
 
-html,body,.all-wrapper {
-	height: 100%;
-}
 
-body {
+.all-wrapper {
 	background: url(../img/bg.jpg) right center no-repeat;
 	background-size: cover;
-}
-
-p {
-	color: #fff;
 }
 
 .container {
 	max-width: 1240px;
 	padding: 0 20px;
 	margin: auto;
-	height: 100%;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+	min-height: 100vh;
 }
+
+.content {
+	max-width: 670px;
+	input {
+		display: block;
+		width: 100%;
+		background: url(../img/search.png) right center no-repeat transparent;
+		border: none;
+		border-bottom: 1px solid #555251;
+		outline: 0;
+		height: 60px;
+		padding: 0 10px;
+		font-size: 36px;
+		color: #fff;
+		font-family: 'museo_cy';
+	}
+}
+
+.dropdown {
+	position: relative;
+	&__list {
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+		height: 336px;
+		overflow-y: auto;
+		position: absolute;
+		width: 100%;
+		a {
+			color: #fff;
+			font-size: 21px;
+			font-family: 'museo';
+			text-decoration: none;
+			display: block;
+			padding: 15px 0 15px 10px;
+			border-bottom: 1px solid #040404;
+			border-top: 1px solid rgba(255, 255, 255, .1);
+			background: url(../img/list-bg.png) repeat;
+			transition: all .3s ease-in-out;
+			&:hover {
+				color: #85e475;
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

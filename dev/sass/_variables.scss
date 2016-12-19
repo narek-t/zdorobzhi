@@ -1,0 +1,23 @@
+@font-face {
+    font-family: 'museo';
+    src: url('../fonts/museosanscyrl_300_0.woff2') format('woff2'),
+         url('../fonts/museosanscyrl_300_0.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'museo';
+    src: url('../fonts/museosanscyrl_500_italic_0.woff2') format('woff2'),
+         url('../fonts/museosanscyrl_500_italic_0.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'museo_cy';
+    src: url('../fonts/exljbris_-_museo_cyrl_300.woff2') format('woff2'),
+         url('../fonts/exljbris_-_museo_cyrl_300.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
