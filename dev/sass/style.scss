@@ -44,6 +44,7 @@ body {
 	display: none;
 	height: 100%;
 	width: 100%;
+	min-height: 300px;
 	&.active {
 		display: block;
 	}
@@ -56,10 +57,20 @@ body {
 		position: absolute;
 		width: 100%;
 		z-index: 1;
-		&-item {
-			background: url(../img/list-bg.png) repeat;
+		background-image: url(../img/list-bg.png);
+		&.no-posts {
+			background-image: url(../img/no-posts.png), url(../img/list-bg.png);
+			background-position: bottom 25px center;
+			background-repeat: no-repeat, repeat;
 		}
-		a {
+		.err {
+			padding: 25px;
+			color: #fff;
+			font-size: 21px;
+			line-height: 30px;
+			font-family: 'museo';
+		}
+		span {
 			color: #fff;
 			font-size: 21px;
 			font-family: 'museo';
@@ -69,9 +80,11 @@ body {
 			border-bottom: 1px solid #040404;
 			border-top: 1px solid rgba(255, 255, 255, .1);
 			transition: all .3s ease-in-out;
-			&:hover {
+			cursor: pointer;
+			&:hover, &.focused {
 				color: #85e475;
 				background: rgba(0, 0, 0, .2);
+				outline: 0;
 			}
 		}
 	}
@@ -79,8 +92,62 @@ body {
 
 .product {
 	&__inner {
+		position: relative;
+	}
+	&__content {
+		display: none;
+		padding-bottom: 60px;
 		background: url(../img/list-bg.png) repeat;
 		position: relative;
+		& div:last-of-type {
+			border-bottom: none;
+		}
+		&.has-content {
+			display: block;
+		}
+	}
+	.random-posts {
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
+		display: flex;
+		flex-flow: row;
+		justify-content: space-between;
+		margin-top: 20px;
+		&__item {
+			width: 30%;
+			height: 56px;
+			border: 1px solid #fff;
+			cursor: pointer;
+			padding-left: 55px;
+			display: flex;
+			align-items: center;
+			position: relative;
+			transition: all .2s ease-in-out;
+			&:hover {
+				border-color: #85e475;
+				span {
+					color: #85e475;
+				}
+			}
+			span {
+				font-size: 14px;
+				color: #fff;
+				font-family: 'museo';
+				font-size: 14px;
+				transition: all .2s ease-in-out;
+			}
+			.thumb {
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 50px;
+				height: 100%;
+				background-position: center center;
+				background-repeat: no-repeat;
+			}
+		}
 	}
 	&__category {
 		line-height: 24px;
@@ -118,7 +185,6 @@ body {
 		font-family: 'museo';
 	}
 	&__nutrition {
-		border-bottom: 1px solid #040404;
 		border-top: 1px solid rgba(255, 255, 255, .1);
 		padding: 20px 30px;
 		&-list {
@@ -139,11 +205,30 @@ body {
 	}
 }
 
+@media screen and (max-width: 700px) {
+	.product .random-posts__item {
+		width: 32%;
+	}
+}
+
+@media screen and (max-width: 550px) {
+	.product .random-posts {
+		display: block;
+	}
+	.product .random-posts__item {
+		width: 100%;
+		margin-bottom: 10px;
+		background: rgba(0, 0, 0, .8);
+	}
+}
+
 @media screen and (max-width: 480px) {
 	.content input {
 		height: 50px;
 		font-size: 25px;
 		background-color: rgba(0, 0, 0, .7);
+		background-position: right 10px center;
+		padding-right: 40px;
 	}
 	.product__category {
 		font-size: 14px;
@@ -154,39 +239,6 @@ body {
 		font-size: 14px;
 	}
 	.container {
-		padding: 0;
+		padding: 0 15px;
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
